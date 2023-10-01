@@ -1,0 +1,10 @@
+.deneme {
+    background-image: '../../assets/blob.svg';
+    background-color: aliceblue;
+}
+
+.img{
+    width: 140px;
+    height: 140px;
+    margin-bottom: 20px;
+}
