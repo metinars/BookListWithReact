@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Login from './components/Login';
 import './App.css';
+import AuthContext from './store/auth-context';
 
 function App() {
-  // const ctx = useContext();
+  const ctx = useContext(AuthContext);
 
   return (
     <React.Fragment>
-      <main>
-        <Login />
-      </main>
+      <main>{!ctx.isLoggedIn && <Login />}</main>
     </React.Fragment>
   );
 }
