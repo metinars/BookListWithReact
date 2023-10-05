@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react';
 
 const AuthContext = React.createContext({
   isLoggedIn: false,
+  isRegister: false,
+  isRegisterClickButton: () => {},
   onLogout: () => {},
   onLogin: () => {},
 });
 
 export const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
 
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem('isLoggedIn');
 
     if (storedUserLoggedInInformation === '1') {
-      setIsLoggedIn(true);
+      setIsLoggedIn(!isRegister);
     }
   }, []);
 
@@ -23,15 +26,23 @@ export const AuthContextProvider = (props) => {
   };
 
   const loginHandler = () => {
-    // localStorage.setItem('isLoggedIn', '1');
+    localStorage.setItem('isLoggedIn', '1');
     console.log(props.emailData);
-    setIsLoggedIn(false);
+    setIsLoggedIn(true);
+  };
+
+  const registerHandler = () => {
+    setIsRegister(!isRegister);
+    console.log(isRegister, 'tıklandı');
+    console.log('click');
   };
 
   return (
     <AuthContext.Provider
       value={{
         isLoggedIn: isLoggedIn,
+        isRegisterClickButton: registerHandler,
+        isRegister: isRegister,
         onLogout: logoutHandler,
         onLogin: loginHandler,
       }}

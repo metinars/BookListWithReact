@@ -1,0 +1,12 @@
+.img {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+}
+
+.register {
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}

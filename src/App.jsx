@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 
 import Login from './components/Login';
+import Register from './components/Register';
+import Book from './components/Book/Book';
 import './App.css';
 import AuthContext from './store/auth-context';
 
@@ -9,7 +11,10 @@ function App() {
 
   return (
     <React.Fragment>
-      <main>{!ctx.isLoggedIn && <Login />}</main>
+      {/* {!ctx.isRegister ? <Login /> : <Register />} */}
+      {/* {!ctx.isLoggedIn && <Register /> && <Login />} */}
+      {!ctx.isLoggedIn && <Book />}
+      {/* {!ctx.isLoggedIn && <Login />} */}
     </React.Fragment>
   );
 }
