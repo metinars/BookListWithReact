@@ -1,8 +1,17 @@
 .card {
-    width: 400px;
+  width: 400px;
   padding: 60px 30px 38px;
   border-radius: 1.25rem;
   background: #ffffff;
   text-align: center;
-  }
-  
+}
+
+.card-book {
+  width: 600px;
+  height: 100%;
+  margin-top: 100px;
+  padding: 60px 30px 38px;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  text-align: center;
+}

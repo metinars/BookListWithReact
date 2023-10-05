@@ -43,6 +43,7 @@ const LoginForm = (props) => {
 
     if (formIsValid) {
       authCtx.onLogin(emailValue, passwordValue);
+      //   authCtx.isRegisterClickButton();
     }
 
     if (!formIsValid) {
