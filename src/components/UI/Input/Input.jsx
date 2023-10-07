@@ -5,6 +5,7 @@ import classes from './Input.module.css';
 const Input = (props) => {
   return (
     <div className={classes[props.className]}>
+      {props.label && <label htmlFor={props.input.id}>{props.label}</label>}
       <input {...props.input} onChange={props.onChange} onBlur={props.onBlur} />
       {props.emailHasError && (
         <p className='error-text'>Please enter a email.</p>
