@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import BooksItem from '../BooksItem';
-import classes from './BooksList.module.css';
 
 const BooksList = () => {
   const [books, setBooks] = useState([]);
@@ -45,7 +44,7 @@ const BooksList = () => {
   ));
 
   return (
-    <section className={classes.book}>
+    <section>
       <ul>{bookItem}</ul>
     </section>
   );
