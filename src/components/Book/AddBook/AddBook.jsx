@@ -3,8 +3,6 @@ import Input from '../../UI/Input';
 import Button from '../../UI/Button';
 import useInput from '../../../hooks/use-input';
 
-import classes from './AddBook.module.css';
-
 const isBook = (value) => value.trim().length > 1;
 
 const AddBook = () => {
@@ -84,8 +82,8 @@ const AddBook = () => {
 
   return (
     <Card className={'card-book'}>
-      <form onSubmit={submitAddBookHandler} className={classes.form}>
-        <div className=''>
+      <form onSubmit={submitAddBookHandler}>
+        <div>
           <Input
             className={bookNameClasses}
             label='Name'
@@ -98,6 +96,7 @@ const AddBook = () => {
             onBlur={nameBlurHandler}
             bookNameHasError={nameHasError}
           />
+          {console.log(bookNameClasses, 'AddBook')}
           <Input
             className={descriptionClasses}
             label='Description'
@@ -108,19 +107,19 @@ const AddBook = () => {
             }}
             onChange={descriptionChangeHandler}
             onBlur={descriptionBlurHandler}
-            bookNameHasError={descriptionHasError}
+            bookDescriptionHasError={descriptionHasError}
           />
           <Input
             className={writerClasses}
-            label='Writer'
+            label='Book Author'
             input={{
-              id: 'writer',
+              id: 'author',
               type: 'text',
               value: writer,
             }}
             onChange={writerChangeHandler}
             onBlur={writerBlurHandler}
-            bookNameHasError={writerHasError}
+            bookWriterHasError={writerHasError}
           />
         </div>
         <div>

@@ -13,6 +13,15 @@ const Input = (props) => {
       {props.passwordHasError && (
         <p className='error-text'>Please enter a password.</p>
       )}
+      {props.bookNameHasError && (
+        <p className='error-text'>Please enter a book name.</p>
+      )}
+      {props.bookDescriptionHasError && (
+        <p className='error-text'>Please enter a description of the book</p>
+      )}
+      {props.bookWriterHasError && (
+        <p className='error-text'>Please enter the author name of the book.</p>
+      )}
     </div>
   );
 };
